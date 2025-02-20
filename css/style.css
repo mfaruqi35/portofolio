@@ -405,3 +405,23 @@ section .home {
   margin-top: 4vh;
 }
 
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #fff;
+  height: 3vh;
+  width: 101vw;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: none;
+  border-left: none;
+}
+
+.footer-copyright{
+  font-size: 1.9vh;
+  font-weight: normal;
+  color: black
+}
