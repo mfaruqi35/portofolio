@@ -244,7 +244,7 @@ section #about .about-container {
   background-color: white;
   border: solid #000;
   border-radius: 5px;
-  height: 70vh;
+  height: 90vh;
   width: 65%;
   justify-content: flex-start;
   position: relative;
@@ -257,6 +257,11 @@ section #about .about-container {
 .about-container-1 {
   padding-top: 1.2vh;
   padding-bottom: 5vh;
+}
+
+.about-container-2 {
+  margin-top: 5vh;
+  height: 10vh;
 }
 
 .about-image {
@@ -295,6 +300,34 @@ section #about .about-container {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.ts-box{
+  display: flex;
+  border: solid;
+  border-radius: 5px;
+  width: 35vh;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4vh;
+  margin-left: 2.5vh;
+  padding: 0;
+}
+
+.lang-icon{
+  height: 7vh;
+  object-fit: contain;
+}
+
+.lang-name{
+  font-size: 1.4rem;
+  padding-bottom: 5px;
+}
+
+.lang-type{
+  font-size: 2.5vh;
+  font-weight: 400;
 }
 
 .project-container {
@@ -364,3 +397,4 @@ section #about .about-container {
   padding: 10px;
   margin-top: 4vh;
 }
+

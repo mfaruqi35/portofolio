@@ -59,7 +59,7 @@
         </div>
         <!-- <hr class="section-line"/> -->
       </section>
-      <section id="about" style="height: 70vh; padding: 0">
+      <section id="about" style="padding: 0">
         <div class="about-container">
           <div class="about-container-1">
             <div class="about-image">
@@ -81,40 +81,22 @@
               software development.
             </p>
           </div>
-          <div class="about-container-2" style="border: solid; height: 10vh;"></div>
+          <div class="about-container-2">
+            <h1 class="content-title">Tech Stacks.</h1>
+            <div class="ts-style">
+              <div class="ts-box">
+                <img class="lang-icon" src="./assets/javabnw.png" alt="java" />
+                <div class="about-lang">
+                  <h1 class="lang-name">Java</h1>
+                  <h2 class="lang-type">Programming Language</h2>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="project" style="height: 70vh"></section>
       <!--Main Section Ends-->
     </main>
-
-    <script src="js/particles.js"></script>
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 200, density: { enable: true, value_area: 800 } },
-          color: { value: "#d6d6d0" },
-          shape: { type: "circle" },
-          opacity: { value: 1 },
-          size: { value: 6, random: true },
-          line_linked: { enable: true },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-          },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: { onhover: { enable: true, mode: "repulse" } },
-          modes: { repulse: { distance: 100, duration: 0.4 } },
-        },
-        retina_detect: true,
-      });
-    </script>
   </body>
 </html>
