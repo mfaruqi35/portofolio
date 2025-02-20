@@ -26,8 +26,14 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  /*border: 1px solid red !important;*/
   text-decoration: none;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Supaya tetap di belakang */
 }
 
 body {
@@ -35,7 +41,6 @@ body {
   background-color: var(--bg);
   scroll-behavior: smooth;
   height: 100vh;
-  overflow-y: hidden;
 }
 
 /* Navbar */
@@ -204,8 +209,13 @@ section .home {
   text-align: center;
 }
 
+.show-more {
+  color: #000;
+  font-weight: 400;
+  padding: 15px;
+}
+
 #about {
-  background-color: #fff;
   border: solid;
 }
 
@@ -213,17 +223,28 @@ section .home {
   font-weight: 600;
 }
 
+.section-line {
+  width: 100%;
+  height: 1.5vh;
+  background-color: #000;
+}
+
 .section-title {
   font-size: 2.5rem;
 }
 
+section #about .about-container {
+  display: none;
+}
+
 .about-container {
+  bottom: 12vh;
   display: flex;
   flex-direction: column;
   background-color: white;
   border: solid #000;
   border-radius: 5px;
-  height: 50vh;
+  height: 70vh;
   width: 65%;
   justify-content: flex-start;
   position: relative;
