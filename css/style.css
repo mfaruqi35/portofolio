@@ -137,6 +137,10 @@ section {
   height: 100vh;
 }
 
+#home{
+  background-image: url("/assets/background.jpg");
+}
+
 div.home-about {
   border: solid black;
   padding-top: 10px;
@@ -233,10 +237,6 @@ section .home {
   font-size: 2.5rem;
 }
 
-section #about .about-container {
-  display: none;
-}
-
 .about-container {
   bottom: 12vh;
   display: flex;
@@ -302,6 +302,15 @@ section #about .about-container {
   justify-content: center;
 }
 
+.ts-style{
+  display: flex;
+  /* border: solid; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
 .ts-box{
   display: flex;
   border: solid;
@@ -310,13 +319,12 @@ section #about .about-container {
   height: 10vh;
   align-items: center;
   justify-content: center;
-  margin-top: 4vh;
-  margin-left: 2.5vh;
+  margin-left: 2vh;
   padding: 0;
 }
-
 .lang-icon{
-  height: 7vh;
+  height: 6vh;
+  margin-right: 1.4vh;
   object-fit: contain;
 }
 
