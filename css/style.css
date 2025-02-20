@@ -219,10 +219,6 @@ section .home {
   padding: 15px;
 }
 
-#about {
-  border: solid;
-}
-
 .highlight-text {
   font-weight: 600;
 }
