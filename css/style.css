@@ -71,7 +71,6 @@ body {
   animation: wiggle 0.3s ease-in-out;
 }
 
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -129,13 +128,16 @@ body {
 }
 
 section {
-  height: 100vh;
+  height: 98.4vh;
+  scroll-margin-top: 80px;
 }
 
-#home{
-  background-image: url("/assets/backgron-Photoroom.png");
+#home {
+  background-image: url("../assets/backgron-Photoroom.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(255, 255, 255, 0.919);
+  background-blend-mode: overlay;
 }
 
 div.home-about {
@@ -289,7 +291,7 @@ section .home {
   justify-content: center;
 }
 
-.ts-style{
+.ts-style {
   display: flex;
   /* border: solid; */
   flex-direction: row;
@@ -298,7 +300,7 @@ section .home {
   padding: 5px;
 }
 
-.ts-box{
+.ts-box {
   display: flex;
   border: solid;
   border-radius: 5px;
@@ -310,18 +312,18 @@ section .home {
   padding: 0;
 }
 
-.lang-icon{
+.lang-icon {
   height: 5.8vh;
   margin-right: 1.4vh;
   object-fit: contain;
 }
 
-.lang-name{
+.lang-name {
   font-size: 1.4rem;
   padding-bottom: 5px;
 }
 
-.lang-type{
+.lang-type {
   font-size: 2.5vh;
   font-weight: 400;
 }
@@ -356,7 +358,7 @@ section .home {
   padding-left: 3.5vw;
 }
 
-.img{
+.img {
   border-radius: 5px;
 }
 
@@ -402,20 +404,20 @@ section .home {
   margin-top: 4vh;
 }
 
-.image-social a{
+.image-social a {
   transition: trasform 0.2s ease-in-out;
 }
 
-.image-social a:hover{
+.image-social a:hover {
   animation: wiggle 0.3s ease-in-out;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   background-color: #fff;
-  height: 3vh;
+  height: 5vh;
   width: 101vw;
   align-items: center;
   justify-content: center;
@@ -425,8 +427,8 @@ section .home {
   border-left: none;
 }
 
-.footer-copyright{
-  font-size: 1.9vh;
+.footer-copyright {
+  font-size: 2.5vh;
   font-weight: normal;
-  color: black
+  color: black;
 }
