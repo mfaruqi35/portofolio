@@ -140,6 +140,14 @@ section {
   background-blend-mode: overlay;
 }
 
+.content-wrapper{
+  background-image: url("../assets/network.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 238, 0.87);
+  background-blend-mode: overlay;
+}
+
 div.home-about {
   border: solid black;
   padding-top: 10px;
