@@ -1,30 +1,14 @@
-"use client";
+import './globals.css';
 
-import { useState } from "react";
-import Link from "next/link";
+export const metadata = {
+  title: 'Portfolio Saya',
+  description: 'Portfolio menggunakan Next.js',
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [emailCopied, setEmailCopied] = useState(false);
-
-  const navItems = [
-    { name: "Home", href: "#" },
-    { name: "Works", href: "#works" },
-    { name: "About Me", href: "#about-me" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const socialLinks = [
-    {
-      icon: "LinkedIn",
-      href: "https://www.linkedin.com/in/muhammad-faruqi/",
-      type: "link",
-    },
-    { icon: "Instagram", href: "", type: "link" },
-    { icon: "Email", type: "link" },
-  ];
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
