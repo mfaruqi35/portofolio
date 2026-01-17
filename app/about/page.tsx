@@ -1,3 +1,7 @@
 export default function About() {
-  return <div></div>;
+  return (
+    <div className="w-full h-screen flex items-center">
+      <h1>INI ABOUT PAGE</h1>
+    </div>
+  );
 }

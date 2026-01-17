@@ -1,3 +1,3 @@
 export default function Works() {
-  return <div></div>;
+  return <div>INI WORKS PAGE</div>;
 }
