@@ -30,10 +30,9 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Sisi Kanan: Tombol Back to Top Statis */}
         <div className="flex flex-col items-center gap-2">
           <motion.button
-            whileHover={{ y: -5 }} // Efek melayang saat di-hover
+            whileHover={{ y: -5 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
             className="group flex flex-col items-center gap-3 focus:outline-none"
@@ -51,7 +50,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="mt-20 text-center text-xs text-slate-600 font-mono">
         © 2026 MUHAMMAD FARUQI. ALL RIGHTS RESERVED.
       </div>

@@ -1,6 +1,34 @@
 "use client";
-
+import { projects } from "./data/projects";
+import WorkCard from "@/components/WorkCard";
 import Image from "next/image";
+
+const dummyProjects = [
+  {
+    title: "Virtual Eyeglasses Try-On",
+    category: "AI / Computer Vision",
+    description:
+      "Deep learning model for face shape detection and AR frame overlay.",
+  },
+  {
+    title: "Hadoop Spark Cluster",
+    category: "Data Engineering",
+    description:
+      "Multi-node cluster setup for processing large scale Indonesian news datasets.",
+  },
+  {
+    title: "Hadoop Spark Cluster",
+    category: "Data Engineering",
+    description:
+      "Multi-node cluster setup for processing large scale Indonesian news datasets.",
+  },
+  {
+    title: "Hadoop Spark Cluster",
+    category: "Data Engineering",
+    description:
+      "Multi-node cluster setup for processing large scale Indonesian news datasets.",
+  },
+];
 
 export default function Home() {
   return (
@@ -42,24 +70,29 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="works" className="w-full h-screen flex ">
-        <div>
-          <h1>INI WORKS SECTION</h1>
+      <section
+        id="works"
+        className="w-full h-auto flex flex-col items-center justify-center py-5"
+      >
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col items-center">
+            <h1 className="text-lg">
+              A <span className="text-sm">small</span> selection of my recent
+              works
+            </h1>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-9xl mx-auto py-5">
+            {projects.map((p, i) => (
+              <WorkCard key={i} project={p} />
+            ))}
+          </div>
         </div>
       </section>
-      <section className="w-full h-screen rounded-2xl flex items-end bg-[#F9FAFB] px-8 pb-8">
-        <div>
+      <section className="w-full h-auto rounded-2xl flex items-center bg-[#F9FAFB] px-8 py-8">
+        <div className="text-black">
           <h1>INI about SECTION</h1>
         </div>
       </section>
-      {/* <section
-        id="contact"
-        className="w-full h-screen border flex items-center"
-      >
-        <div>
-          <h1>INI CONTACT SECTION</h1>
-        </div>
-      </section> */}
     </div>
   );
 }
