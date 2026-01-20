@@ -1,57 +1,82 @@
 "use client";
-import { ArrowUp } from "lucide-react";
-import { motion } from "motion/react";
+import { ArrowUp, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer
       id="contact"
-      className="w-full bg-[#2b2b2b] py-20 px-10 border-t border-slate-800"
+      className="w-full bg-black text-white pt-10 pb-6 px-6 md:px-16"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-        {/* Sisi Kiri: Info Kontak */}
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl font-bold">Lets connect.</h2>
-          <p className="text-slate-400">
-            Tersedia untuk diskusi seputar Backend & AI/ML.
-          </p>
-          <a
-            href="mailto:email@kamu.com"
-            className="text-blue-500 hover:underline"
-          >
-            email@kamu.com
-          </a>
-        </div>
-
-        <div className="flex flex-col items-center gap-2">
-          <motion.button
-            whileHover={{ y: -5 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={scrollToTop}
-            className="group flex flex-col items-center gap-3 focus:outline-none"
-          >
-            <div className="p-4 rounded-full border border-slate-700 group-hover:border-blue-500 transition-colors">
-              <ArrowUp
-                size={20}
-                className="text-slate-400 group-hover:text-blue-500 transition-colors"
+      <div className="max-w-7xl mx-auto flex flex-col h-full justify-between">
+        {/* ROW 1: Social & Labels (Rapat) */}
+        <div className="flex flex-wrap justify-between items-center pb-6 border-b border-slate-800 gap-4">
+          <div className="flex gap-6">
+            <a href="#" className="group flex items-center gap-1">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-white transition-colors">
+                LinkedIn
+              </span>
+              <ArrowUpRight
+                size={14}
+                className="text-slate-600 group-hover:text-blue-500"
               />
-            </div>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-200">
-              Back to Top
-            </span>
-          </motion.button>
+            </a>
+            <a href="#" className="group flex items-center gap-1">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-white transition-colors">
+                Instagram
+              </span>
+              <ArrowUpRight
+                size={14}
+                className="text-slate-600 group-hover:text-blue-500"
+              />
+            </a>
+          </div>
+          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            Available for projects
+          </span>
         </div>
-      </div>
 
-      <div className="mt-20 text-center text-xs text-slate-600 font-mono">
-        © 2026 MUHAMMAD FARUQI. ALL RIGHTS RESERVED.
+        {/* ROW 2: Email & Phone (Dibuat Bersebelahan) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 py-8 border-b border-slate-800 gap-8">
+          <div className="flex flex-col gap-1">
+            <span className="text-[9px] font-mono text-slate-600 uppercase">
+              Email
+            </span>
+            <h2 className="text-2xl md:text-4xl font-medium tracking-tighter hover:text-blue-400 transition-colors cursor-pointer">
+              muhammad.faruqi35@gmail.com
+            </h2>
+          </div>
+        </div>
+
+        {/* ROW 3: Contact Title (Ukurannya dikurangi agar tidak memakan layar) */}
+        <div className="py-8 md:py-12 text-center md:text-left">
+          <h1 className="text-[15vw] md:text-[10vw] font-bold leading-[0.8] tracking-tighter uppercase opacity-90">
+            Contact
+          </h1>
+        </div>
+
+        {/* ROW 4: Bottom Copyright (Sangat Rapat) */}
+        <div className="flex justify-between items-end pt-6">
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 text-[10px] font-bold uppercase text-slate-500 hover:text-white transition-all"
+            >
+              <ArrowUp size={14} /> Back to top
+            </button>
+            <p className="text-[9px] text-slate-600 font-mono italic">
+              © Design & Build by Muhammad Faruqi
+            </p>
+          </div>
+          <div className="text-5xl font-bold tracking-tighter opacity-30 leading-none">
+            ©{currentYear}
+          </div>
+        </div>
       </div>
     </footer>
   );

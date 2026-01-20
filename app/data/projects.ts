@@ -18,18 +18,18 @@ export const projects: Project[] = [
     image: "/projects/recepku/thumbnail.jpg",
   },
   {
-    slug: "recepku",
-    title: "Recepku",
+    slug: "levelup",
+    title: "LevelUp",
+    image: "/projects/levelup/thumbnail2.jpg",
+  },
+  {
+    slug: "levelup",
+    title: "Gamebrank",
     image: "/projects/recepku/thumbnail.jpg",
   },
   {
-    slug: "recepku",
-    title: "Recepku",
-    image: "/projects/recepku/thumbnail.jpg",
-  },
-  {
-    slug: "recepku",
-    title: "Recepku",
-    image: "/projects/recepku/thumbnail.jpg",
+    slug: "hmifpeduli",
+    title: "HMIFPeduli",
+    image: "/projects/hmifpeduli/thumbnail.jpg",
   },
 ];

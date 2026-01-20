@@ -29,19 +29,19 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Works", href: "/works", id: "works" },
-    { name: "About", href: "/about", id: "about" },
+    { name: "Works", href: "#works", id: "works" },
+    { name: "About", href: "#about", id: "about" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
   return (
-    <nav className="absolute top-0 w-full z-50 bg-transparent h-16 flex items-center place-content-between pl-10 border-b text-[#2b2b2b]">
+    <nav className="fixed top-0 w-full z-50 bg-transparent h-14 flex items-center place-content-between pl-10 text-white border-b mix-blend-difference">
       <div>
         <Link href="/">
           <div className="flex flex-col w-75">MUHAMMAD FARUQI</div>
         </Link>
       </div>
-      <div className="flex flex-row h-full justify-between items-center w-md border-l px-20 font-medium">
+      <div className="flex flex-row h-full justify-between items-center w-3xl border-l px-25 font-medium">
         {navLinks.map((link) => (
           <div key={link.id}>
             <Link
