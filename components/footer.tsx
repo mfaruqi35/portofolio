@@ -14,7 +14,6 @@ export default function Footer() {
       className="w-full bg-black text-white pt-10 pb-6 px-6 md:px-16"
     >
       <div className="max-w-7xl mx-auto flex flex-col h-full justify-between">
-        {/* ROW 1: Social & Labels (Rapat) */}
         <div className="flex flex-wrap justify-between items-center pb-6 border-b border-slate-800 gap-4">
           <div className="flex gap-6">
             <a href="#" className="group flex items-center gap-1">
@@ -41,7 +40,6 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* ROW 2: Email & Phone (Dibuat Bersebelahan) */}
         <div className="grid grid-cols-1 md:grid-cols-2 py-8 border-b border-slate-800 gap-8">
           <div className="flex flex-col gap-1">
             <span className="text-[9px] font-mono text-slate-600 uppercase">
@@ -53,14 +51,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ROW 3: Contact Title (Ukurannya dikurangi agar tidak memakan layar) */}
-        <div className="py-8 md:py-12 text-center md:text-left">
+        <div className="py-8 md:py-12 text-left">
           <h1 className="text-[15vw] md:text-[10vw] font-bold leading-[0.8] tracking-tighter uppercase opacity-90">
             Contact
           </h1>
         </div>
 
-        {/* ROW 4: Bottom Copyright (Sangat Rapat) */}
         <div className="flex justify-between items-end pt-6">
           <div className="flex flex-col gap-2">
             <button

@@ -2,14 +2,25 @@
 import { projects } from "./data/projects";
 import WorkCard from "@/components/WorkCard";
 import SlidingLink from "@/components/SlidingLink";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
+
+const headerFont = Inter({
+  subsets: ["latin"],
+  weight: "700",
+});
+
+const contentFont = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden bg-background">
+    <div className="overflow-x-hidden bg-background ">
       <section
         id="hero"
-        className="w-full h-screen rounded-b-2xl flex items-end bg-[#F9FAFB] px-10"
+        className={`w-full h-screen rounded-b-2xl flex items-end bg-[#F9FAFB] px-10 ${contentFont.className}`}
       >
         <div className=" text-black w-full h-100 ">
           <div className="relative h-18 w-18 rounded-full border-2 border-[#2b2b2b] justify-center overflow-x-hidden items-center">
@@ -21,8 +32,8 @@ export default function Home() {
             />
           </div>
 
-          <div className="py-10 flex items-center w-[50vw]">
-            <h1 className="text-3xl font-light">
+          <div className="py-15 flex items-center w-[50vw]">
+            <h1 className="text-[22px] font-light">
               Banda Aceh based Backend Developer and AI/ML Specialist crafting
               robust architectures and intelligent models for forward-thinking
               digital experiences.
@@ -50,7 +61,11 @@ export default function Home() {
       >
         <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col">
-            <h1 className="text-8xl font-serif text-off-white">Works</h1>
+            <h1
+              className={`text-7xl font-bold text-off-white ${headerFont.className}`}
+            >
+              PROJECTS
+            </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-9xl mx-auto py-5">
             {projects.map((p, i) => (
@@ -66,28 +81,29 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end border-b pb-10 mb-10">
-            <h1 className="text-8xl font-serif">About</h1>
-            <div className="w-10 h-10 rounded-full overflow-hidden bg-black"></div>
+            <h1 className="text-8xl font-bold text-black">About</h1>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 border-b pb-10 mb-10">
-          <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2">
+          <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2 text-black">
             overview
           </div>
-          <div className="md:col-span-2 space-y-4 text-lg leading-relaxed">
+          <div className="md:col-span-2 space-y-4 text-lg leading-relaxed text-black">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus ea illo eum perspiciatis veniam alias quibusdam numquam
-              magni eligendi! Minima nemo error soluta ipsa. Tempora amet
-              necessitatibus modi labore vitae.
+              I am an Informatics student with a strong interest in backend
+              development and AI/ML, experienced in building projects ranging
+              from sustainability-focused applications to data-driven and
+              predictive systems. I also have experience teaching programming
+              fundamentals and enjoy designing solutions that are clean,
+              scalable, and impactful.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 border-b pb-10 mb-10">
-          <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2">
+          <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2 text-black">
             Skillset
           </div>
-          <div className="md:col-span-2 grid grid-cols-2 gap-4">
+          <div className="md:col-span-2 grid grid-cols-2 gap-4 text-black">
             <ul className="space-y-1">
               <li>Backend Development</li>
               <li>Computer Vision</li>
@@ -101,10 +117,10 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 border-b pb-10 mb-10">
-          <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2">
+          <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2 text-black">
             Recognitions
           </div>
-          <div className="md:col-span-2 grid grid-cols-2 gap-4">
+          <div className="md:col-span-2 grid grid-cols-2 gap-4 text-black">
             <ul className="space-y-1">
               <li>Awardee</li>
               <li>Awardee</li>

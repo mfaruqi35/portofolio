@@ -1,5 +1,6 @@
 // components/WorkCard.tsx
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 export default function WorkCard({ project }: { project: any }) {
   return (
@@ -14,7 +15,10 @@ export default function WorkCard({ project }: { project: any }) {
           />
         </div>
       </div>
-      <div className="text-white pl-3 pt-3">{project.title}</div>
+      <div className="text-white pl-3 pt-3 grid grid-cols-2 border gap-2">
+        {project.title}
+        <ArrowUpRight size={13} />
+      </div>
     </div>
   );
 }
