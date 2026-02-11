@@ -1,7 +1,6 @@
 "use client";
 import { projects } from "./data/projects";
 import WorkCard from "@/components/WorkCard";
-import SlidingLink from "@/components/SlidingLink";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
 
@@ -57,7 +56,7 @@ export default function Home() {
       </section>
       <section
         id="works"
-        className="w-full h-auto flex flex-col items-center justify-center py-5"
+        className="w-full h-auto flex flex-col items-center justify-center py-16"
       >
         <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col">
@@ -67,12 +66,34 @@ export default function Home() {
               PROJECTS
             </h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-9xl mx-auto py-5">
-            {projects.map((p, i) => (
-              <WorkCard key={i} project={p} />
-            ))}
+
+          {/* Timeline layout */}
+          <div className="relative mt-16">
+            {/* Garis vertikal di tengah */}
+            <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#F9FAFB]" />
+
+            <div className="flex flex-col gap-20">
+              {projects.map((p, i) => (
+                <div
+                  key={i}
+                  className={`relative flex items-center ${
+                    i % 2 === 0 ? "justify-start" : "justify-end"
+                  }`}
+                >
+                  {/* Titik di garis */}
+                  <div className="pointer-events-none absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-background bg-neutral-900" />
+
+                  <div
+                    className={`w-full md:w-1/2 ${
+                      i % 2 === 0 ? "pr-10 md:pr-16" : "pl-10 md:pl-16"
+                    }`}
+                  >
+                    <WorkCard project={p} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          {/* <SlidingLink text="Show More" href="/works" /> */}
         </div>
       </section>
       <section
@@ -106,8 +127,7 @@ export default function Home() {
           <div className="md:col-span-2 grid grid-cols-2 gap-4 text-black">
             <ul className="space-y-1">
               <li>Backend Development</li>
-              <li>Computer Vision</li>
-              <li>Big Data (Hadoop/Spark)</li>
+              <li>Machine Learning</li>
             </ul>
             <ul className="space-y-1">
               <li>Next.js & TypeScript</li>
