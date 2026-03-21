@@ -13,7 +13,7 @@ export default function Footer() {
           <h2 className="text-4xl md:text-7xl font-medium leading-[0.95] tracking-tight">
             Say Hello,
           </h2>
-          <h2 className="text-4xl md:text-7xl font-medium leading-[0.95] tracking-tight">
+          <h2 className="text-4xl md:text-7xl font-semibold leading-[0.95] tracking-tight">
             I Don&apos;t Bite.
           </h2>
         </div>

@@ -3,6 +3,7 @@ import { projects } from "./data/projects";
 import WorkCard from "@/components/WorkCard";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 const headerFont = Inter({
   subsets: ["latin"],
@@ -33,14 +34,13 @@ export default function Home() {
 
           <div className="py-15 flex items-center w-[50vw]">
             <h1 className="text-[22px] font-light">
-              Banda Aceh based Backend Developer and AI/ML Specialist crafting
-              robust architectures and intelligent models for forward-thinking
-              digital experiences.
+              Banda Aceh based Backend Developer and AI/ML Enthusiast, turning
+              ideas into working systems that solve real problems.
             </h1>
           </div>
           <div className="flex flex-row justify-between">
             <div className="">
-              <h1>AI/ML Specialist</h1>
+              <h1>AI/ML Enthusiast</h1>
               <h1>Backend Developer</h1>
             </div>
             <div className="">
@@ -49,7 +49,16 @@ export default function Home() {
             </div>
             <div className="">
               <h1>Get in Touch</h1>
-              <h1>muhammad.faruqi35@gmail.com</h1>
+              <a
+                href="mailto:muhammad.faruqi35@gmail.com"
+                className="group inline-flex items-center gap-1 font-bold transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <span>muhammad.faruqi35@gmail.com</span>
+                <ArrowUpRight
+                  size={15}
+                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -111,10 +120,10 @@ export default function Home() {
           </div>
           <div className="md:col-span-2 space-y-4 text-lg leading-relaxed text-black">
             <p>
-              Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala University
-              with a passion for building intelligent and scalable systems. From
-              NLP pipelines to backend APIs, I enjoy turning ideas into working
-              software.
+              Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala
+              University with a passion for building intelligent and scalable
+              systems. From NLP pipelines to backend APIs, I enjoy turning ideas
+              into working software.
             </p>
           </div>
         </div>
@@ -140,31 +149,31 @@ export default function Home() {
           <div className="md:col-span-2 text-black">
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
-                <h3 className="text-base font-semibold">Beasiswa Unggulan</h3>
+                <h3 className="text-base">Beasiswa Unggulan</h3>
                 <p className="text-base leading-relaxed">
-                  Pusat Prestasi Nasional (Puspresnas)
+                  Fully Funded Scholarship
                   <br />
-                  Fully funded - tuition, living & book allowance, 8 semesters,
-                  2023
+                  <span className="font-light">
+                    Pusat Prestasi Nasional, 2023
+                  </span>
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
-                <h3 className="text-base font-semibold">
+                <h3 className="text-base">
                   University of Doha for Science and Technology
                 </h3>
                 <p className="text-base leading-relaxed">
-                  International Guest Student, Jan 2026
+                  International Guest Student
                   <br />
-                  Coursework in Artificial Intelligence & Software Engineering,
-                  Doha, Qatar
+                  Doha, Qatar — Jan 2026
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
-                <h3 className="text-base font-semibold">Data Science ARA 7.0</h3>
+                <h3 className="text-base">Data Science ARA 7.0</h3>
                 <p className="text-base leading-relaxed">
-                  Finalist - Institut Teknologi Sepuluh Nopember
+                  Finalist
                   <br />
-                  Surabaya, Feb 2026
+                  Institut Teknologi Sepuluh Nopember, Feb 2026
                 </p>
               </div>
             </div>
