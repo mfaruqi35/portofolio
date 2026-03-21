@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="w-full bg-black text-white px-6 md:px-16 py-16 md:py-24"
+      className="w-full bg-black text-white px-6 md:px-16 pt-16 md:pt-24 pb-5 md:pb-8"
     >
       <div className="max-w-7xl mx-auto">
         <div className="space-y-3 md:space-y-4">
@@ -21,21 +21,36 @@ export default function Footer() {
         <div className="mt-10 md:mt-14">
           <a
             href="mailto:muhammad.faruqi35@gmail.com"
-            className="text-xl md:text-3xl text-neutral-200 hover:text-white transition-colors"
+            className="text-l md:text-2xl text-neutral-200 hover:text-white transition-colors"
           >
             muhammad.faruqi35@gmail.com
           </a>
         </div>
 
-        <div className="mt-10 md:mt-14 border-t border-white/15 pt-5 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-2 md:mt-4 border-t border-white/15 pt-5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-6 text-sm md:text-base">
-            <a href="#" className="text-neutral-300 hover:text-white transition-colors">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-300 hover:text-white transition-colors"
+            >
               Instagram
             </a>
-            <a href="#" className="text-neutral-300 hover:text-white transition-colors">
+            <a
+              href="https://www.linkedin.com/in/muhammad-faruqi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-300 hover:text-white transition-colors"
+            >
               LinkedIn
             </a>
-            <a href="#" className="text-neutral-300 hover:text-white transition-colors">
+            <a
+              href="https://github.com/mfaruqi35"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-300 hover:text-white transition-colors"
+            >
               GitHub
             </a>
           </div>
