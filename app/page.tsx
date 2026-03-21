@@ -111,28 +111,25 @@ export default function Home() {
           </div>
           <div className="md:col-span-2 space-y-4 text-lg leading-relaxed text-black">
             <p>
-              I am an Informatics student with a strong interest in backend
-              development and AI/ML, experienced in building projects ranging
-              from sustainability-focused applications to data-driven and
-              predictive systems. I also have experience teaching programming
-              fundamentals and enjoy designing solutions that are clean,
-              scalable, and impactful.
+              Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala University
+              with a passion for building intelligent and scalable systems. From
+              NLP pipelines to backend APIs, I enjoy turning ideas into working
+              software.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 border-b pb-10 mb-10">
           <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2 text-black">
-            Skillset
+            Interests
           </div>
           <div className="md:col-span-2 grid grid-cols-2 gap-4 text-black">
             <ul className="space-y-1">
-              <li>Backend Development</li>
-              <li>Machine Learning</li>
+              <li>AI & Machine Learning</li>
+              <li>NLP & Text Processing</li>
             </ul>
             <ul className="space-y-1">
-              <li>Next.js & TypeScript</li>
-              <li>Python & TensorFlow</li>
-              <li>API Architecture</li>
+              <li>Backend Development</li>
+              <li>Cloud Engineering</li>
             </ul>
           </div>
         </div>
@@ -140,20 +137,37 @@ export default function Home() {
           <div className="md:col-span-2 text-sm font-medium uppercase flex gap-2 text-black">
             Recognitions
           </div>
-          <div className="md:col-span-2 grid grid-cols-2 gap-4 text-black">
-            <ul className="space-y-1">
-              <li>Awardee</li>
-              <li>Awardee</li>
-              <li>Awardee</li>
-            </ul>
-            <ul className="space-y-1">
-              <li>
-                <div className="flex flex-col">
-                  <h1>TES</h1>
-                  <h1>Tes</h1>
-                </div>
-              </li>
-            </ul>
+          <div className="md:col-span-2 text-black">
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+                <h3 className="text-base font-semibold">Beasiswa Unggulan</h3>
+                <p className="text-base leading-relaxed">
+                  Pusat Prestasi Nasional (Puspresnas)
+                  <br />
+                  Fully funded - tuition, living & book allowance, 8 semesters,
+                  2023
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+                <h3 className="text-base font-semibold">
+                  University of Doha for Science and Technology
+                </h3>
+                <p className="text-base leading-relaxed">
+                  International Guest Student, Jan 2026
+                  <br />
+                  Coursework in Artificial Intelligence & Software Engineering,
+                  Doha, Qatar
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+                <h3 className="text-base font-semibold">Data Science ARA 7.0</h3>
+                <p className="text-base leading-relaxed">
+                  Finalist - Institut Teknologi Sepuluh Nopember
+                  <br />
+                  Surabaya, Feb 2026
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
