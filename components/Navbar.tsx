@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { X, ArrowUpRight } from "lucide-react";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 
 const logoFont = Inter({
@@ -17,7 +16,6 @@ const navFont = Plus_Jakarta_Sans({
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +45,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black md:bg-transparent h-14 flex items-center justify-between px-6 md:pl-10 text-white border-b border-slate-800 md:mix-blend-difference">
+    <nav className="fixed top-0 w-full z-50 bg-transparent h-14 flex items-center justify-between px-6 md:pl-10 text-white border-b border-slate-800 mix-blend-difference">
       <div>
         <Link href="/">
           <div className={`font-bold tracking-tighter ${logoFont.className}`}>
@@ -90,60 +88,12 @@ export default function Navbar() {
         })}
       </div>
 
-      <button
-        className="flex md:hidden flex-col gap-1.5 cursor-pointer z-50"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      <Link
+        href="#about"
+        className={`flex md:hidden text-white font-medium ${navFont.className}`}
       >
-        {isMenuOpen ? (
-          <X size={28} strokeWidth={1.5} />
-        ) : (
-          <>
-            <div className="w-6 h-0.5 bg-white"></div>
-            <div className="w-6 h-0.5 bg-white"></div>
-          </>
-        )}
-      </button>
-
-      <div
-        className={`fixed inset-0 bg-black z-40 flex flex-col px-8 py-20 transition-transform duration-500 ease-in-out md:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.id}
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="flex flex-col group"
-            >
-              <span className="text-5xl font-medium tracking-tighter group-active:text-blue-500">
-                {link.name}
-              </span>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-auto border-t border-slate-800 pt-10 flex flex-col gap-6">
-          <span className="text-[10px] font-serif italic text-slate-500">
-            Social
-          </span>
-          <div className="flex flex-col gap-4">
-            <a
-              href="#"
-              className="flex items-center gap-1 text-xs font-bold tracking-widest uppercase"
-            >
-              INSTAGRAM <ArrowUpRight size={14} className="text-slate-500" />
-            </a>
-            <a
-              href="#"
-              className="flex items-center gap-1 text-xs font-bold tracking-widest uppercase"
-            >
-              LINKEDIN <ArrowUpRight size={14} className="text-slate-500" />
-            </a>
-          </div>
-        </div>
-      </div>
+        About
+      </Link>
     </nav>
   );
 }
