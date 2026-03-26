@@ -1,4 +1,5 @@
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { ArrowUpRight } from "lucide-react";
 
 const headerFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -15,16 +16,16 @@ export default function About() {
     <div className="overflow-x-hidden bg-background">
       <section
         id="about"
-        className="w-full h-auto rounded-b-2xl bg-[#F9FAFB] px-4 pb-8 pt-50 sm:px-4 md:px-8 md:pb-10"
+        className="w-full h-auto rounded-b-2xl bg-[#F9FAFB] px-4 pb-10 pt-60 sm:px-4 md:px-8 md:pb-12"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10 flex justify-between">
+          <div className="border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10 flex justify-between items-baseline-last">
             <h1
               className={`text-5xl font-bold text-black sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
               ABOUT
             </h1>
-            <div className="h-30 w-30 border rounded-full"></div>
+            <div className="md:h-30 md:w-30 h-20 w-20 border rounded-full"></div>
           </div>
         </div>
         <div
@@ -39,10 +40,32 @@ export default function About() {
           <div className="md:col-span-2 space-y-3 text-base leading-relaxed text-black sm:text-md ">
             <p>
               Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala
-              University with a passion for building intelligent and scalable
-              systems. From NLP pipelines to backend APIs, I enjoy turning ideas
-              into working software.
+              University with a keen interest in AI/ML and backend development.
+              I enjoy building things that are grounded in real problems
             </p>
+            <p>
+              I tend to approach problems by exploring options before commiting,
+              benchmarking algorithms, comparing model architectures, or
+              stress-testing an idea against real constraints. I find that the
+              best solutions usually come from understanding the tradeoffs, not
+              just picking what sounds right.
+            </p>
+            <p>
+              I&apos;m still early in the journey, but I&apos;m moving
+              deliberately and I&apos;m always open to collaborations,
+              interesting problems, or just a good conversation about building
+              something worthwhile.
+            </p>
+            <a
+              href="mailto:muhammad.faruqi35@gmail.com"
+              className="group inline-flex items-center gap-1 font-bold transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              muhammad.faruqi35@gmail.com
+              <ArrowUpRight
+                size={13}
+                className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </a>
           </div>
         </div>
         <div

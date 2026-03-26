@@ -96,7 +96,7 @@ export default function Navbar() {
           Works
         </Link>
         <Link
-          href="#about"
+          href="/about"
           className={`text-white font-medium ${navFont.className}`}
         >
           About

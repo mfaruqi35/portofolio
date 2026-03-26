@@ -85,7 +85,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="w-full h-auto rounded-2xl bg-[#F9FAFB] px-4 py-8 sm:px-4 md:px-8 md:py-10"
+        className="w-full h-auto rounded-2xl bg-[#F9FAFB] px-4 py-10 sm:px-4 md:px-8 md:py-12"
       >
         <div className="max-w-7xl mx-auto">
           <div className="border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10">
