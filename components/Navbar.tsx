@@ -6,7 +6,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 
 const logoFont = Inter({
   subsets: ["latin"],
-  weight: "700",
+  weight: "600",
 });
 
 const navFont = Plus_Jakarta_Sans({
@@ -39,22 +39,23 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Projects", href: "#works", id: "works" },
+    { name: "Works", href: "#works", id: "works" },
     { name: "About", href: "#about", id: "about" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-transparent h-14 flex items-center justify-between px-6 md:pl-10 text-white border-b border-slate-800 mix-blend-difference">
+    <nav className="fixed top-0 w-full z-50 bg-transparent h-18 md:h-20 flex items-center justify-between px-6 md:px-10 text-white  mix-blend-difference">
       <div>
         <Link href="/">
           <div className={`font-bold tracking-tighter ${logoFont.className}`}>
-            MUHAMMAD FARUQI
+            <span className="hidden md:inline">MUHAMMAD FARUQI</span>
+            <span className="inline md:hidden">MF</span>
           </div>
         </Link>
       </div>
 
-      <div className="hidden md:flex flex-row h-full justify-between items-center w-3xl border-l border-slate-800 px-25 font-medium">
+      <div className="hidden md:flex flex-row h-full justify-end items-center w-3xl font-medium gap-10">
         {navLinks.map((link) => {
           const isActive = activeSection === link.id;
 
@@ -87,13 +88,20 @@ export default function Navbar() {
           );
         })}
       </div>
-
-      <Link
-        href="#about"
-        className={`flex md:hidden text-white font-medium ${navFont.className}`}
-      >
-        About
-      </Link>
+      <div className="flex md:hidden gap-6">
+        <Link
+          href="#works"
+          className={`text-white font-medium ${navFont.className}`}
+        >
+          Works
+        </Link>
+        <Link
+          href="#about"
+          className={`text-white font-medium ${navFont.className}`}
+        >
+          About
+        </Link>
+      </div>
     </nav>
   );
 }

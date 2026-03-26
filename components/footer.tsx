@@ -13,11 +13,11 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="w-full bg-black text-white px-6 md:px-16 pt-16 md:pt-24 pb-5 md:pb-8"
+      className={`w-full bg-black text-white px-6 md:px-16 pt-16 md:pt-24 pb-5 md:pb-8 ${contentFont.className}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="space-y-3 md:space-y-4">
-          <h2 className="text-4xl md:text-7xl font-medium leading-[0.95] tracking-tight">
+          <h2 className="text-4xl md:text-7xl font-light leading-[0.95] tracking-tight">
             Say Hello,
           </h2>
           <h2 className="text-4xl md:text-7xl font-semibold leading-[0.95] tracking-tight">

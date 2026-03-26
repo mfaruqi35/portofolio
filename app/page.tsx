@@ -4,9 +4,9 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-const headerFont = Inter({
+const headerFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: "700",
+  weight: "800",
 });
 
 const contentFont = Plus_Jakarta_Sans({
@@ -78,7 +78,7 @@ export default function Home() {
             <h1
               className={`text-5xl font-bold text-off-white sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
-              PROJECTS
+              WORKS
             </h1>
           </div>
         </div>
