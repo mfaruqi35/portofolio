@@ -1,6 +1,5 @@
 "use client";
 import { projects } from "./data/projects";
-import WorkCard from "@/components/WorkCard";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
@@ -32,7 +31,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Headline: full width di mobile (~60–70% lebar layar alami), 50vw di md+ */}
           <div className="flex w-full items-center md:w-[50vw] md:max-w-[50%]">
             <h1 className="text-[22px] font-light leading-[1.35] tracking-tight">
               Banda Aceh based Backend Developer and AI/ML Enthusiast, turning
@@ -40,14 +38,17 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Mobile: blok kiri (role + lokasi) + kontak di bawah; sm+: mirip referensi — kiri dua klaster, kanan kontak */}
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
             <div className="flex justify-between gap-8 sm:justify-start sm:gap-12 md:gap-24">
-              <div className="flex flex-col">
-                <span className="text-base leading-tight">AI/ML Enthusiast</span>
-                <span className="text-base leading-tight">Backend Developer</span>
+              <div className="flex flex-col gap-1">
+                <span className="text-base leading-tight">
+                  AI/ML Enthusiast
+                </span>
+                <span className="text-base leading-tight">
+                  Backend Developer
+                </span>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-1">
                 <span className="text-base leading-tight">Based In</span>
                 <span className="text-base leading-tight">Banda Aceh</span>
               </div>
@@ -70,43 +71,15 @@ export default function Home() {
       </section>
       <section
         id="works"
-        className="w-full h-auto flex flex-col items-center justify-center py-16"
+        className="w-full h-auto px-4 py-10 sm:px-6 md:px-8 md:py-12"
       >
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
           <div className="flex flex-col">
             <h1
-              className={`text-7xl font-bold text-off-white ${headerFont.className}`}
+              className={`text-7xl font-bold text-off-white sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
               PROJECTS
             </h1>
-          </div>
-
-          {/* Timeline layout */}
-          <div className="relative mt-16">
-            {/* Garis vertikal di tengah */}
-            <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#F9FAFB]" />
-
-            <div className="flex flex-col gap-20">
-              {projects.map((p, i) => (
-                <div
-                  key={i}
-                  className={`relative flex items-center ${
-                    i % 2 === 0 ? "justify-start" : "justify-end"
-                  }`}
-                >
-                  {/* Titik di garis */}
-                  <div className="pointer-events-none absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-background bg-neutral-900" />
-
-                  <div
-                    className={`w-full md:w-1/2 ${
-                      i % 2 === 0 ? "pr-10 md:pr-16" : "pl-10 md:pl-16"
-                    }`}
-                  >
-                    <WorkCard project={p} />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -116,8 +89,10 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="border-b border-black/10 pb-6 mb-8 md:pb-10 md:mb-10">
-            <h1 className="text-7xl font-bold text-black sm:text-7xl md:text-8xl">
-              About
+            <h1
+              className={`text-7xl font-bold text-black sm:text-7xl md:text-7xl ${headerFont.className}`}
+            >
+              ABOUT
             </h1>
           </div>
         </div>
@@ -128,13 +103,16 @@ export default function Home() {
             </span>
             overview
           </div>
-          <div className="md:col-span-2 space-y-4 text-base leading-relaxed text-black sm:text-lg">
+          <div className="md:col-span-2 space-y-4 text-base leading-relaxed text-black sm:text-md">
             <p>
               Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala
               University with a passion for building intelligent and scalable
               systems. From NLP pipelines to backend APIs, I enjoy turning ideas
               into working software.
             </p>
+            <div>
+              <a href="/about">Read More</a>
+            </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0">
@@ -172,7 +150,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-2 text-black">
             <div className="space-y-10 sm:space-y-12">
-              <div className="grid grid-cols-[minmax(0,34%)_minmax(0,1fr)] gap-x-3 gap-y-1 sm:gap-x-5">
+              <div className="grid grid-cols-[minmax(0,34%)_minmax(0,1fr)] gap-x-3 gap-y-1 sm:gap-x-6">
                 <h3 className="text-sm font-medium leading-snug text-black sm:text-base">
                   Beasiswa Unggulan
                 </h3>
