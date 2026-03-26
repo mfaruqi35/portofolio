@@ -19,7 +19,7 @@ export default function Home() {
     <div className="overflow-x-hidden bg-background ">
       <section
         id="hero"
-        className={`flex min-h-dvh w-full flex-col justify-end rounded-b-2xl bg-[#F9FAFB] px-5 pb-10 pt-20 sm:px-8 md:px-10 md:pb-14 ${contentFont.className}`}
+        className={`flex min-h-dvh w-full flex-col justify-end rounded-b-2xl bg-[#F9FAFB] px-5 pb-14 pt-20 sm:px-8 md:px-10 md:pb-18 ${contentFont.className}`}
       >
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 text-black md:gap-12">
           <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-full border-2 border-[#2b2b2b]">
@@ -71,7 +71,7 @@ export default function Home() {
       </section>
       <section
         id="works"
-        className="w-full h-auto px-4 py-10 sm:px-6 md:px-8 md:py-12"
+        className="w-full h-auto px-4 py-8 sm:px-6 md:px-8 md:py-10"
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col">
@@ -85,10 +85,10 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="w-full h-auto rounded-2xl bg-[#F9FAFB] px-4 py-10 sm:px-6 md:px-8 md:py-12"
+        className="w-full h-auto rounded-2xl bg-[#F9FAFB] px-4 py-8 sm:px-4 md:px-8 md:py-10"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="border-b border-black/10 pb-6 mb-8 md:pb-10 md:mb-10">
+          <div className="border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10">
             <h1
               className={`text-5xl font-bold text-black sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className={`max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
+          className={`max-w-7xl mx-auto grid grid-cols-1 gap-5 border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
         >
           <div className="md:col-span-2 text-xs font-medium uppercase tracking-wide text-neutral-500 sm:text-sm">
             <span className="mr-1 text-neutral-400" aria-hidden>
@@ -105,7 +105,7 @@ export default function Home() {
             </span>
             overview
           </div>
-          <div className="md:col-span-2 space-y-4 text-base leading-relaxed text-black sm:text-md ">
+          <div className="md:col-span-2 space-y-3 text-base leading-relaxed text-black sm:text-md ">
             <p>
               Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala
               University with a passion for building intelligent and scalable
@@ -115,7 +115,7 @@ export default function Home() {
             <div>
               <a
                 href="/about"
-                className="group inline-flex items-center gap-1 font-bold transition-transform duration-200 hover:-translate-y-0.5"
+                className="font-bold transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Read More
               </a>
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className={`max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
+          className={`max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
         >
           <div className="md:col-span-2 text-xs font-medium uppercase tracking-wide text-neutral-500 sm:text-sm">
             <span className="mr-1 text-neutral-400" aria-hidden>
