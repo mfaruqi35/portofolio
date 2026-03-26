@@ -11,7 +11,7 @@ const headerFont = Inter({
 
 const contentFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: "400",
+  weight: "500",
 });
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
           </div>
 
           <div className="flex w-full items-center md:w-[50vw] md:max-w-[50%]">
-            <h1 className="text-[22px] font-light leading-[1.35] tracking-tight">
+            <h1 className="text-lg font-light leading-[1.35] tracking-tight md:text-[25px]">
               Banda Aceh based Backend Developer and AI/ML Enthusiast, turning
               ideas into working systems that solve real problems.
             </h1>
@@ -61,7 +61,7 @@ export default function Home() {
               >
                 <span>muhammad.faruqi35@gmail.com</span>
                 <ArrowUpRight
-                  size={15}
+                  size={13}
                   className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
@@ -76,7 +76,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col">
             <h1
-              className={`text-7xl font-bold text-off-white sm:text-7xl md:text-7xl ${headerFont.className}`}
+              className={`text-5xl font-bold text-off-white sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
               PROJECTS
             </h1>
@@ -90,20 +90,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="border-b border-black/10 pb-6 mb-8 md:pb-10 md:mb-10">
             <h1
-              className={`text-7xl font-bold text-black sm:text-7xl md:text-7xl ${headerFont.className}`}
+              className={`text-5xl font-bold text-black sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
               ABOUT
             </h1>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0">
+        <div
+          className={`max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
+        >
           <div className="md:col-span-2 text-xs font-medium uppercase tracking-wide text-neutral-500 sm:text-sm">
             <span className="mr-1 text-neutral-400" aria-hidden>
               ↳
             </span>
             overview
           </div>
-          <div className="md:col-span-2 space-y-4 text-base leading-relaxed text-black sm:text-md">
+          <div className="md:col-span-2 space-y-4 text-base leading-relaxed text-black sm:text-md ">
             <p>
               Hi, I&apos;m Faruqi, an Informatics student at Syiah Kuala
               University with a passion for building intelligent and scalable
@@ -111,11 +113,18 @@ export default function Home() {
               into working software.
             </p>
             <div>
-              <a href="/about">Read More</a>
+              <a
+                href="/about"
+                className="group inline-flex items-center gap-1 font-bold transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                Read More
+              </a>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0">
+        <div
+          className={`max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
+        >
           <div className="md:col-span-2 text-xs font-medium uppercase tracking-wide text-neutral-500 sm:text-sm">
             <span className="mr-1 text-neutral-400" aria-hidden>
               ↳
@@ -141,47 +150,45 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 border-b border-black/10 pb-10 mb-10 md:grid-cols-4 md:gap-0">
+        <div
+          className={`max-w-7xl mx-auto grid grid-cols-1 gap-8 border-black/10 mb-5 md:grid-cols-4 md:gap-0 ${contentFont.className}`}
+        >
           <div className="md:col-span-2 text-xs font-medium uppercase tracking-wide text-neutral-500 sm:text-sm">
             <span className="mr-1 text-neutral-400" aria-hidden>
               ↳
             </span>
             Recognitions
           </div>
-          <div className="md:col-span-2 text-black">
-            <div className="space-y-10 sm:space-y-12">
-              <div className="grid grid-cols-[minmax(0,34%)_minmax(0,1fr)] gap-x-3 gap-y-1 sm:gap-x-6">
-                <h3 className="text-sm font-medium leading-snug text-black sm:text-base">
-                  Beasiswa Unggulan
-                </h3>
-                <div className="flex min-w-0 flex-col gap-1 text-sm leading-snug sm:text-base">
-                  <span>Fully Funded Scholarship</span>
-                  <span className="text-neutral-500">
-                    Pusat Prestasi Nasional, 2023
-                  </span>
-                </div>
+          <div className="md:col-span-2 flex flex-col gap-8">
+            <div className="grid grid-cols-2 gap-x-8">
+              <h3 className="text-sm font-medium leading-snug sm:text-base text-black">
+                Beasiswa Unggulan
+              </h3>
+              <div className="flex flex-col gap-1 text-sm leading-snug sm:text-base">
+                <span className="text-black">Fully Funded Scholarship</span>
+                <span className="text-neutral-500">
+                  Pusat Prestasi Nasional, 2023
+                </span>
               </div>
-              <div className="grid grid-cols-[minmax(0,34%)_minmax(0,1fr)] gap-x-3 gap-y-1 sm:gap-x-5">
-                <h3 className="text-sm font-medium leading-snug text-black sm:text-base">
-                  University of Doha for Science and Technology
-                </h3>
-                <div className="flex min-w-0 flex-col gap-1 text-sm leading-snug sm:text-base">
-                  <span>International Guest Student</span>
-                  <span className="text-neutral-500">
-                    Doha, Qatar — Jan 2026
-                  </span>
-                </div>
+            </div>
+            <div className="grid grid-cols-2 gap-x-8">
+              <h3 className="text-sm font-medium leading-snug sm:text-base text-black">
+                University of Doha for Science and Technology
+              </h3>
+              <div className="flex flex-col gap-1 text-sm leading-snug sm:text-base">
+                <span className="text-black">International Guest Student</span>
+                <span className="text-neutral-500">Doha, Qatar — Jan 2026</span>
               </div>
-              <div className="grid grid-cols-[minmax(0,34%)_minmax(0,1fr)] gap-x-3 gap-y-1 sm:gap-x-5">
-                <h3 className="text-sm font-medium leading-snug text-black sm:text-base">
-                  Data Science ARA 7.0
-                </h3>
-                <div className="flex min-w-0 flex-col gap-1 text-sm leading-snug sm:text-base">
-                  <span>Finalist</span>
-                  <span className="text-neutral-500">
-                    Institut Teknologi Sepuluh Nopember, Feb 2026
-                  </span>
-                </div>
+            </div>
+            <div className="grid grid-cols-2 gap-x-8">
+              <h3 className="text-sm font-medium leading-snug sm:text-base text-black">
+                Data Science ARA 7.0
+              </h3>
+              <div className="flex flex-col gap-1 text-sm leading-snug sm:text-base">
+                <span className="text-black">Finalist</span>
+                <span className="text-neutral-500">
+                  Institut Teknologi Sepuluh Nopember, Feb 2026
+                </span>
               </div>
             </div>
           </div>

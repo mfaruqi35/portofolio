@@ -1,5 +1,11 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+const contentFont = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
