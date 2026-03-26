@@ -115,7 +115,7 @@ export default function Home() {
             <div>
               <a
                 href="/about"
-                className="font-bold transition-transform duration-200 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-1 font-bold transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Read More
               </a>

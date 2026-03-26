@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className={`w-full bg-black text-white px-6 md:px-16 pt-16 md:pt-24 pb-5 md:pb-8 ${contentFont.className}`}
+      className={`w-full bg-black text-white px-6 md:px-16 pt-14 md:pt-18 pb-5 md:pb-8 ${contentFont.className}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="space-y-3 md:space-y-4">
@@ -25,7 +25,7 @@ export default function Footer() {
           </h2>
         </div>
 
-        <div className="mt-10 md:mt-14">
+        <div className="mt-6 md:mt-10">
           <a
             href="mailto:muhammad.faruqi35@gmail.com"
             className="text-l md:text-2xl text-neutral-200 hover:text-white transition-colors"
