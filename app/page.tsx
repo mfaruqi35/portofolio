@@ -82,7 +82,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col">
             <h1
-              className={`text-5xl font-bold text-off-white sm:text-7xl md:text-7xl ${headerFont.className}`}
+              className={`text-5xl font-bold sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
               WORKS
             </h1>
