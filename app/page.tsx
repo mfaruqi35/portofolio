@@ -17,10 +17,10 @@ const contentFont = Plus_Jakarta_Sans({
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden bg-background ">
+    <div className="overflow-x-hidden bg-bg-dark isolate">
       <section
         id="hero"
-        className={`flex min-h-dvh w-full flex-col justify-end rounded-b-2xl bg-[#F9FAFB] px-5 pb-14 pt-20 sm:px-8 md:px-10 md:pb-18 ${contentFont.className}`}
+        className={`flex min-h-dvh w-full flex-col justify-end rounded-b-2xl bg-bg-light px-5 pb-14 pt-20 sm:px-8 md:px-10 md:pb-18 ${contentFont.className}`}
       >
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -91,7 +91,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="w-full h-auto rounded-2xl bg-[#F9FAFB] px-4 py-10 sm:px-4 md:px-8 md:py-12"
+        className="w-full h-auto rounded-2xl bg-bg-light px-4 py-10 sm:px-4 md:px-8 md:py-12"
       >
         <div className="max-w-7xl mx-auto">
           <div className="border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10">

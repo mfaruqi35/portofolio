@@ -13,10 +13,10 @@ const contentFont = Plus_Jakarta_Sans({
 
 export default function About() {
   return (
-    <div className="overflow-x-hidden bg-background">
+    <div className="overflow-x-hidden bg-bg-dark">
       <section
         id="about"
-        className="w-full h-auto rounded-b-2xl bg-[#F9FAFB] px-4 pb-10 pt-60 sm:px-4 md:px-8 md:pb-12"
+        className="w-full h-auto rounded-b-2xl bg-bg-light px-4 pb-10 pt-60 sm:px-4 md:px-8 md:pb-12"
       >
         <div className="max-w-7xl mx-auto">
           <div className="border-b border-black/10 pb-8 mb-8 md:pb-10 md:mb-10 flex justify-between items-baseline-last">
