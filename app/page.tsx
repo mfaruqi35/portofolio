@@ -3,6 +3,7 @@ import { projects } from "./data/projects";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const headerFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -21,7 +22,12 @@ export default function Home() {
         id="hero"
         className={`flex min-h-dvh w-full flex-col justify-end rounded-b-2xl bg-[#F9FAFB] px-5 pb-14 pt-20 sm:px-8 md:px-10 md:pb-18 ${contentFont.className}`}
       >
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 text-black md:gap-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mx-auto flex w-full max-w-7xl flex-col gap-10 text-black md:gap-12"
+        >
           <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-full border-2 border-[#2b2b2b]">
             <Image
               src="/avatar.svg"
@@ -67,7 +73,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       <section
         id="works"
