@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata = {
   title: "Portfolio",
   description: "Portfolio",
+  icons: {
+    icon: "/me.ico",
+  },
 };
 
 export default function RootLayout({
