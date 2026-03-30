@@ -41,7 +41,11 @@ export default function Navbar() {
   const navLinks = [
     { name: "Works", href: "/#works", id: "works" },
     { name: "About", href: "/about", id: "about" },
-    { name: "Contact", href: "#contact", id: "contact" },
+    {
+      name: "Contact",
+      href: "mailto:muhammad.faruqi35@gmail.com",
+      id: "contact",
+    },
   ];
 
   return (
