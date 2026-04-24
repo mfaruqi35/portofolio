@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="mt-2 md:mt-4 border-t border-white/15 pt-5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-6 text-sm md:text-base">
             <a
-              href="#"
+              href="https://www.instagram.com/muhammadfaruqi35/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-300 hover:text-white transition-colors"
