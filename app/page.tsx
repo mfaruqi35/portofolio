@@ -134,7 +134,7 @@ export default function Home() {
           <div 
             ref={carouselRef}
             onScroll={handleScroll}
-            className="relative flex w-full gap-4 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
+            className="relative flex w-full gap-2 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
           >
             {projects.map((project) => (
               <div key={project.slug} className="snap-center shrink-0">
@@ -226,14 +226,14 @@ export default function Home() {
           <div className="md:col-span-2 text-black">
             <ul className="flex flex-col gap-1.5 text-base font-medium sm:hidden">
               <li>AI & Machine Learning</li>
-              <li>NLP & Text Processing</li>
+              <li>Software Quality Assurance</li>
               <li>Backend Development</li>
               <li>Cloud Engineering</li>
             </ul>
             <div className="hidden sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-2">
               <ul className="space-y-2 text-sm sm:text-base">
                 <li>AI & Machine Learning</li>
-                <li>NLP & Text Processing</li>
+                <li>Software Quality Assurance</li>
               </ul>
               <ul className="space-y-2 text-sm sm:text-base">
                 <li>Backend Development</li>

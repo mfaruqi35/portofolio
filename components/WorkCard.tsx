@@ -17,8 +17,8 @@ export default function WorkCard({ project }: { project: Project }) {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 flex items-end justify-center bg-black/50 p-4 opacity-0 transition-opacity group-hover:opacity-100">
-        <h2 className="rounded-full bg-bg-light px-5 py-2 text-xs font-bold tracking-wide text-black shadow-lg">
+      <div className="absolute inset-0 flex items-end justify-center bg-black/50 p-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        <h2 className="translate-y-4 rounded-full bg-bg-dark px-5 py-2 text-xs font-bold tracking-wide text-bg-light shadow-lg transition-transform duration-150 ease-out group-hover:translate-y-0">
           {project.title}
         </h2>
       </div>

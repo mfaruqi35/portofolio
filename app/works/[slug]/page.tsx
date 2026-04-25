@@ -24,6 +24,20 @@ export default async function ProjectDetailPage({
     <article className="min-h-screen bg-bg-light px-4 pb-20 pt-24 sm:px-6 md:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-10 flex w-full gap-4 overflow-x-auto snap-x snap-mandatory pb-4">
+          {project.video && (
+            <div className="relative aspect-video w-full shrink-0 snap-center overflow-hidden rounded-2xl border border-black/10 bg-neutral-200">
+              <video
+                src={project.video}
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
+
           {project.images && project.images.length > 0 ? (
             project.images.map((img, idx) => (
               <div
@@ -38,7 +52,7 @@ export default async function ProjectDetailPage({
                 />
               </div>
             ))
-          ) : (
+          ) : !project.video && (
             <div className="relative aspect-video w-full shrink-0 snap-center overflow-hidden rounded-2xl border border-black/10 bg-neutral-200">
               <Image
                 src={project.image}
