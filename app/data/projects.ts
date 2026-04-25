@@ -1,13 +1,14 @@
 export type ProjectTag =
   | "Backend Development"
-  | "Data Science"
+  | "Computer Vision"
+  | "Machine Learning"
   | "Android Development";
 
 export interface Project {
   slug: string;
   title: string;
   image: string; // Thumbnail image
-  tag: ProjectTag;
+  tags: ProjectTag[];
   description: string;
   repoLink?: string;
   projectLink?: string;
@@ -20,9 +21,9 @@ const LOREM_IPSUM =
 export const projects: Project[] = [
   {
     slug: "project-satu",
-    title: "Project Satu",
-    image: "/avatar.svg", // Using avatar as placeholder for now since it exists
-    tag: "Backend Development",
+    title: "PROJECT SATU",
+    image: "/avatar.svg", 
+    tags: ["Backend Development", "Machine Learning"],
     description: LOREM_IPSUM,
     repoLink: "https://github.com",
     projectLink: "https://example.com",
@@ -32,7 +33,7 @@ export const projects: Project[] = [
     slug: "project-dua",
     title: "Project Dua",
     image: "/avatar.svg",
-    tag: "Data Science",
+    tags: ["Computer Vision"],
     description: LOREM_IPSUM,
     repoLink: "https://github.com",
     images: ["/avatar.svg", "/avatar.svg"],
@@ -41,28 +42,28 @@ export const projects: Project[] = [
     slug: "project-tiga",
     title: "Project Tiga",
     image: "/avatar.svg",
-    tag: "Android Development",
+    tags: ["Android Development", "Computer Vision"],
     description: LOREM_IPSUM,
     projectLink: "https://example.com",
     images: ["/avatar.svg"],
   },
-  {
-    slug: "project-empat",
-    title: "Project Empat",
-    image: "/avatar.svg",
-    tag: "Backend Development",
-    description: LOREM_IPSUM,
-    repoLink: "https://github.com",
-    projectLink: "https://example.com",
-    images: ["/avatar.svg", "/avatar.svg", "/avatar.svg", "/avatar.svg"],
-  },
-  {
-    slug: "project-lima",
-    title: "Project Lima",
-    image: "/avatar.svg",
-    tag: "Data Science",
-    description: LOREM_IPSUM,
-    repoLink: "https://github.com",
-    images: ["/avatar.svg", "/avatar.svg"],
-  },
+  // {
+  //   slug: "project-empat",
+  //   title: "Project Empat",
+  //   image: "/avatar.svg",
+  //   tag: "Backend Development",
+  //   description: LOREM_IPSUM,
+  //   repoLink: "https://github.com",
+  //   projectLink: "https://example.com",
+  //   images: ["/avatar.svg", "/avatar.svg", "/avatar.svg", "/avatar.svg"],
+  // },
+  // {
+  //   slug: "project-lima",
+  //   title: "Project Lima",
+  //   image: "/avatar.svg",
+  //   tag: "Data Science",
+  //   description: LOREM_IPSUM,
+  //   repoLink: "https://github.com",
+  //   images: ["/avatar.svg", "/avatar.svg"],
+  // },
 ];

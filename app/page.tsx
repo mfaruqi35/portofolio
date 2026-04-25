@@ -1,10 +1,11 @@
 "use client";
+import { useRef, useState } from "react";
 import { projects } from "./data/projects";
 import WorkCard from "@/components/WorkCard";
 import Link from "next/link";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const headerFont = Plus_Jakarta_Sans({
@@ -18,6 +19,46 @@ const contentFont = Plus_Jakarta_Sans({
 });
 
 export default function Home() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const container = carouselRef.current;
+    const children = Array.from(container.children) as HTMLElement[];
+    let closestIndex = 0;
+    let minDiff = Infinity;
+
+    children.forEach((child, index) => {
+      const diff = Math.abs(child.offsetLeft - container.scrollLeft);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIndex = index;
+      }
+    });
+
+    if (closestIndex !== activeIndex) {
+      setActiveIndex(closestIndex);
+    }
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!carouselRef.current) return;
+    const container = carouselRef.current;
+    const child = container.children[index] as HTMLElement;
+    if (child) {
+      container.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
+    }
+  };
+
+  const scrollPrev = () => {
+    if (activeIndex > 0) scrollToCard(activeIndex - 1);
+  };
+
+  const scrollNext = () => {
+    if (activeIndex < projects.length - 1) scrollToCard(activeIndex + 1);
+  };
+
   return (
     <div className="overflow-x-hidden bg-bg-dark isolate">
       <section
@@ -90,20 +131,48 @@ export default function Home() {
             </h1>
           </div>
           
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
-            {projects.slice(0, 4).map((project) => (
-              <WorkCard key={project.slug} project={project} />
+          <div 
+            ref={carouselRef}
+            onScroll={handleScroll}
+            className="relative flex w-full gap-4 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
+          >
+            {projects.map((project) => (
+              <div key={project.slug} className="snap-center shrink-0">
+                <WorkCard project={project} />
+              </div>
             ))}
           </div>
 
-          <div className="mt-10 flex justify-center md:mt-14">
-            <Link
-              href="/works"
-              className="inline-flex items-center gap-2 rounded-full border border-black px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black"
+          {/* <div className="mt-6 flex items-center justify-center gap-6">
+            <button 
+              onClick={scrollPrev}
+              disabled={activeIndex === 0}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              See more
-            </Link>
-          </div>
+              <ChevronLeft size={20} className="text-black" />
+            </button>
+            
+            <div className="flex gap-2">
+              {projects.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => scrollToCard(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeIndex === idx ? "w-8 bg-black" : "w-2 bg-neutral-300 hover:bg-neutral-400"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <button 
+              onClick={scrollNext}
+              disabled={activeIndex === projects.length - 1}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <ChevronRight size={20} className="text-black" />
+            </button>
+          </div> */}
         </div>
       </section>
       <section
