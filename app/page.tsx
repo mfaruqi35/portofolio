@@ -1,5 +1,7 @@
 "use client";
 import { projects } from "./data/projects";
+import WorkCard from "@/components/WorkCard";
+import Link from "next/link";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
@@ -80,12 +82,27 @@ export default function Home() {
         className="w-full h-auto px-4 py-8 sm:px-6 md:px-8 md:py-10"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-8 md:mb-10">
             <h1
               className={`text-5xl font-bold sm:text-7xl md:text-7xl ${headerFont.className}`}
             >
               WORKS
             </h1>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+            {projects.slice(0, 4).map((project) => (
+              <WorkCard key={project.slug} project={project} />
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center md:mt-14">
+            <Link
+              href="/works"
+              className="inline-flex items-center gap-2 rounded-full border border-black px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black"
+            >
+              See more
+            </Link>
           </div>
         </div>
       </section>

@@ -1,35 +1,68 @@
-export interface ProjectContent {
-  type: "text" | "image";
-  value: "string";
-  caption?: string;
-}
+export type ProjectTag =
+  | "Backend Development"
+  | "Data Science"
+  | "Android Development";
 
 export interface Project {
   slug: string;
   title: string;
-  image: string;
-  content?: ProjectContent[];
+  image: string; // Thumbnail image
+  tag: ProjectTag;
+  description: string;
+  repoLink?: string;
+  projectLink?: string;
+  images?: string[]; // Carousel images for the detail page
 }
+
+const LOREM_IPSUM =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
 
 export const projects: Project[] = [
   {
-    slug: "recepku",
-    title: "Recepku",
-    image: "/projects/recepku/thumbnail.jpg",
+    slug: "project-satu",
+    title: "Project Satu",
+    image: "/avatar.svg", // Using avatar as placeholder for now since it exists
+    tag: "Backend Development",
+    description: LOREM_IPSUM,
+    repoLink: "https://github.com",
+    projectLink: "https://example.com",
+    images: ["/avatar.svg", "/avatar.svg", "/avatar.svg"],
   },
   {
-    slug: "levelup",
-    title: "LevelUp",
-    image: "/projects/levelup/thumbnail2.jpg",
+    slug: "project-dua",
+    title: "Project Dua",
+    image: "/avatar.svg",
+    tag: "Data Science",
+    description: LOREM_IPSUM,
+    repoLink: "https://github.com",
+    images: ["/avatar.svg", "/avatar.svg"],
   },
   {
-    slug: "levelup",
-    title: "Gamebrank",
-    image: "/projects/recepku/thumbnail.jpg",
+    slug: "project-tiga",
+    title: "Project Tiga",
+    image: "/avatar.svg",
+    tag: "Android Development",
+    description: LOREM_IPSUM,
+    projectLink: "https://example.com",
+    images: ["/avatar.svg"],
   },
   {
-    slug: "hmifpeduli",
-    title: "HMIFPeduli",
-    image: "/projects/hmifpeduli/thumbnail.jpg",
+    slug: "project-empat",
+    title: "Project Empat",
+    image: "/avatar.svg",
+    tag: "Backend Development",
+    description: LOREM_IPSUM,
+    repoLink: "https://github.com",
+    projectLink: "https://example.com",
+    images: ["/avatar.svg", "/avatar.svg", "/avatar.svg", "/avatar.svg"],
+  },
+  {
+    slug: "project-lima",
+    title: "Project Lima",
+    image: "/avatar.svg",
+    tag: "Data Science",
+    description: LOREM_IPSUM,
+    repoLink: "https://github.com",
+    images: ["/avatar.svg", "/avatar.svg"],
   },
 ];
