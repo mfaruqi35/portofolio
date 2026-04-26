@@ -24,12 +24,12 @@ export const projects: Project[] = [
   {
     slug: "gamebrenk",
     title: "GAMEBRENK",
-    image: "/avatar.svg", 
+    image: "/projects/gamebrank/thumbnail.webp", 
     tags: ["Backend Development", "Machine Learning", "Information Retrieval"],
-    description: "Gamebrank is a specific search engine for Indonesian game news. This Search engine implements two information retrieval algorithms, BM25 and Sentence-BERT, to compare the performance of both algorithms in terms of precision, recall, and f1-score.",
+    description: "Gamebrenk is a specific search engine for Indonesian game news. This Search engine implements two information retrieval algorithms, BM25 and Sentence-BERT, to compare the performance of both algorithms in terms of precision, recall, and f1-score.",
     repoLink: "https://github.com/affanshdr/Search-Engine-Stephy.git",
-    projectLink: "https://example.com",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    // projectLink: "https://example.com",
+    video: "https://res.cloudinary.com/dnu2tbnva/video/upload/v1777187561/Gamebrenk_demo_qfnkax.mp4",
   },
   {
     slug: "pothole-segmentation",

@@ -6,7 +6,7 @@ export default function WorkCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/works/${project.slug}`}
-      className="group relative block aspect-[4/3] w-[240px] shrink-0 overflow-hidden rounded-xl border border-black/10 bg-neutral-200 sm:w-[280px] md:w-[320px]"
+      className="group relative block aspect-video w-[220px] shrink-0 overflow-hidden rounded-xl border border-black/10 bg-neutral-200 sm:w-[260px] md:w-[420px]"
     >
       {/* Thumbnail */}
       <Image
