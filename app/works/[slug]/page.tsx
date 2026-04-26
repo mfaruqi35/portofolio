@@ -82,9 +82,11 @@ export default async function ProjectDetailPage({
 
         {/* Konten Deskripsi & Link */}
         <div className="space-y-8">
-          <p className="text-lg leading-relaxed text-black/80">
-            {project.description}
-          </p>
+          <div className="flex flex-col gap-4 text-lg leading-relaxed text-black/80">
+            {project.description.split('\n').filter(p => p.trim() !== '').map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
 
           <div className="flex flex-wrap gap-4 pt-4">
             {project.projectLink && (

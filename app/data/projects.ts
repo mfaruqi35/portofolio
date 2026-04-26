@@ -22,14 +22,14 @@ const LOREM_IPSUM =
 
 export const projects: Project[] = [
   {
-    slug: "gamebrenk",
-    title: "GAMEBRENK",
+    slug: "gamebrank",
+    title: "GAMEBRANK",
     image: "/projects/gamebrank/thumbnail.webp", 
     tags: ["Backend Development", "Machine Learning", "Information Retrieval"],
-    description: "Gamebrenk is a specific search engine for Indonesian game news. This Search engine implements two information retrieval algorithms, BM25 and Sentence-BERT, to compare the performance of both algorithms in terms of precision, recall, and f1-score.",
+    description: `Gamebrank is a search engine specific for Indonesian game news. This search engine implements two information retrieval algorithms, BM25 and Sentence-BERT, to compare the performance of both algorithms in terms of precision, recall, and f1-score. `,
     repoLink: "https://github.com/affanshdr/Search-Engine-Stephy.git",
     // projectLink: "https://example.com",
-    video: "https://res.cloudinary.com/dnu2tbnva/video/upload/v1777187561/Gamebrenk_demo_qfnkax.mp4",
+    video: "https://res.cloudinary.com/dnu2tbnva/video/upload/v1777217826/gamebrank_demo_en1yvr.mp4",
   },
   {
     slug: "pothole-segmentation",
