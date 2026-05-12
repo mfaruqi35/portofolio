@@ -37,17 +37,9 @@ export const projects: Project[] = [
     tags: ["Machine Learning", "Computer Vision"],
     description: "This project is a segmentation model that can detect potholes in the road. Built using U-Net architecture and EfficientNet-B5 as the encoder, gets 80% f1-score.",
     repoLink: "https://github.com",
+    projectLink: "https://colab.research.google.com/drive/1Aj5utII1bGT8LL-3X_tsWoqHHE_qVMKC?usp=sharing",
     images: ["/projects/pothole/pipeline.webp", "/projects/pothole/strats.webp", "/projects/pothole/eval.webp", "/projects/pothole/result.webp"],
   },
-  // {
-  //   slug: "banana-ripeness-classification",
-  //   title: "BANANA RIPENESS CLASSIFICATION",
-  //   image: "/avatar.svg",
-  //   tags: ["Machine Learning", "Computer Vision"],
-  //   description: "This project is a classification model that can classify banana ripeness with 4 classes (unripe, ripe, overripe, and rotten).",
-  //   repoLink: "https://github.com/Shqcod/BananaRipenessClassification.git",
-  //   images: ["/avatar.svg"],
-  // },
   {
     slug: "level-up",
     title: "LEVEL UP",
