@@ -6,15 +6,19 @@ export default function WorkCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/works/${project.slug}`}
-      className="group relative block aspect-video w-[220px] shrink-0 overflow-hidden rounded-xl border border-black/10 bg-neutral-200 sm:w-[260px] md:w-[420px]"
+      className="group relative block aspect-video w-[220px] shrink-0 overflow-hidden rounded-xl border border-black/10 bg-neutral-200 sm:w-[260px] md:w-[320px]"
     >
-      {/* Thumbnail */}
-      <Image
-        src={project.image}
-        alt={project.title}
-        fill
-        className="object-cover transition-transform duration-500"
-      />
+      {/* Thumbnail Container */}
+      <div className="flex h-full w-full items-center justify-center">
+        <div className="relative w-full aspect-video overflow-hidden rounded-lg">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500"
+          />
+        </div>
+      </div>
 
       {/* Hover Overlay */}
       <div className="absolute inset-0 flex items-end justify-center bg-black/50 p-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">

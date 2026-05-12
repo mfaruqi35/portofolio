@@ -20,43 +20,62 @@ const contentFont = Plus_Jakarta_Sans({
 
 export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleScroll = () => {
     if (!carouselRef.current) return;
     const container = carouselRef.current;
-    const children = Array.from(container.children) as HTMLElement[];
-    let closestIndex = 0;
-    let minDiff = Infinity;
+    
+    // Fallbacks for extreme ends
+    const isAtStart = container.scrollLeft <= 5;
+    const isAtEnd = Math.abs(container.scrollWidth - container.clientWidth - container.scrollLeft) <= 5;
+    
+    const maxPage = Math.ceil(projects.length / 3) - 1;
 
-    children.forEach((child, index) => {
-      const diff = Math.abs(child.offsetLeft - container.scrollLeft);
-      if (diff < minDiff) {
-        minDiff = diff;
-        closestIndex = index;
-      }
-    });
+    let page = 0;
 
-    if (closestIndex !== activeIndex) {
-      setActiveIndex(closestIndex);
+    if (isAtStart) {
+      page = 0;
+    } else if (isAtEnd) {
+      page = maxPage;
+    } else {
+      const children = Array.from(container.children) as HTMLElement[];
+      const viewportCenter = container.scrollLeft + container.clientWidth / 2;
+      let closestIndex = 0;
+      let minDiff = Infinity;
+
+      children.forEach((child, index) => {
+        const childCenter = child.offsetLeft + child.offsetWidth / 2;
+        const diff = Math.abs(childCenter - viewportCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIndex = index;
+        }
+      });
+
+      page = Math.floor(closestIndex / 3);
     }
+
+    if (page !== currentPage) setCurrentPage(page);
   };
 
-  const scrollToCard = (index: number) => {
+  const scrollToPage = (pageIndex: number) => {
     if (!carouselRef.current) return;
     const container = carouselRef.current;
-    const child = container.children[index] as HTMLElement;
+    const childIndex = pageIndex * 3;
+    const child = container.children[childIndex] as HTMLElement;
     if (child) {
       container.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
     }
   };
 
   const scrollPrev = () => {
-    if (activeIndex > 0) scrollToCard(activeIndex - 1);
+    if (currentPage > 0) scrollToPage(currentPage - 1);
   };
 
   const scrollNext = () => {
-    if (activeIndex < projects.length - 1) scrollToCard(activeIndex + 1);
+    const maxPage = Math.ceil(projects.length / 3) - 1;
+    if (currentPage < maxPage) scrollToPage(currentPage + 1);
   };
 
   return (
@@ -82,7 +101,7 @@ export default function Home() {
 
           <div className="flex w-full items-center md:w-[50vw] md:max-w-[50%]">
             <h1 className="text-lg font-light leading-[1.35] tracking-tight md:text-[25px]">
-              Banda Aceh based Backend Developer and AI/ML Enthusiast, turning
+              Aceh based Backend Developer and AI/ML Enthusiast, turning
               ideas into working systems that solve real problems.
             </h1>
           </div>
@@ -99,7 +118,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-base leading-tight">Based In</span>
-                <span className="text-base leading-tight">Banda Aceh</span>
+                <span className="text-base leading-tight">Aceh, Indonesia</span>
               </div>
             </div>
             <div className="flex flex-col gap-1 sm:shrink-0 sm:items-end sm:text-right">
@@ -131,48 +150,48 @@ export default function Home() {
             </h1>
           </div>
           
-          <div 
-            ref={carouselRef}
-            onScroll={handleScroll}
-            className="relative flex w-full gap-2 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
-          >
-            {projects.map((project) => (
-              <div key={project.slug} className="snap-center shrink-0">
-                <WorkCard project={project} />
-              </div>
-            ))}
-          </div>
-
-          {/* <div className="mt-6 flex items-center justify-center gap-6">
+          <div className="relative flex w-full items-center justify-between gap-4 md:gap-8">
             <button 
               onClick={scrollPrev}
-              disabled={activeIndex === 0}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={currentPage === 0}
+              className="hidden md:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <ChevronLeft size={20} className="text-black" />
+              <ChevronLeft size={24} className="text-black" />
             </button>
-            
-            <div className="flex gap-2">
-              {projects.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => scrollToCard(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    activeIndex === idx ? "w-8 bg-black" : "w-2 bg-neutral-300 hover:bg-neutral-400"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
+
+            <div 
+              ref={carouselRef}
+              onScroll={handleScroll}
+              className="relative flex w-full md:max-w-[992px] gap-4 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
+            >
+              {projects.map((project) => (
+                <div key={project.slug} className="snap-center shrink-0">
+                  <WorkCard project={project} />
+                </div>
               ))}
             </div>
 
             <button 
               onClick={scrollNext}
-              disabled={activeIndex === projects.length - 1}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={currentPage === Math.ceil(projects.length / 3) - 1}
+              className="hidden md:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <ChevronRight size={20} className="text-black" />
+              <ChevronRight size={24} className="text-black" />
             </button>
-          </div> */}
+          </div>
+
+          <div className="hidden md:flex items-center justify-center gap-2 mt-2">
+            {Array.from({ length: Math.ceil(projects.length / 3) }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => scrollToPage(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentPage === idx ? "w-8 bg-bg-light" : "w-2 border border-bg-light hover:bg-bg-light/50"
+                }`}
+                aria-label={`Go to page ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
       <section
