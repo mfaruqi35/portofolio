@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, ArrowRight } from "lucide-react";
 
 const headerFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
