@@ -33,11 +33,11 @@ export const projects: Project[] = [
   {
     slug: "pothole-segmentation",
     title: "POTHOLE SEGMENTATION",
-    image: "/avatar.svg",
+    image: "/projects/pothole/thumbnail.webp",
     tags: ["Machine Learning", "Computer Vision"],
     description: "This project is a segmentation model that can detect potholes in the road. Built using U-Net architecture and EfficientNet-B5 as the encoder, gets 80% f1-score.",
     repoLink: "https://github.com",
-    images: ["/avatar.svg", "/avatar.svg"],
+    images: ["/projects/pothole/pipeline.webp", "/projects/pothole/strats.webp", "/projects/pothole/eval.webp", "/projects/pothole/result.webp"],
   },
   // {
   //   slug: "banana-ripeness-classification",
