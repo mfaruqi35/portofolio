@@ -3,7 +3,8 @@ export type ProjectTag =
   | "Computer Vision"
   | "Machine Learning"
   | "Information Retrieval"
-  | "Android Development";
+  | "Android Development"
+  | "Natural Language Processing";
 
 export interface Project {
   slug: string;
@@ -36,27 +37,26 @@ export const projects: Project[] = [
     image: "/projects/pothole/thumbnail.webp",
     tags: ["Machine Learning", "Computer Vision"],
     description: "This project is a segmentation model that can detect potholes in the road. Built using U-Net architecture and EfficientNet-B5 as the encoder, gets 80% f1-score.",
-    repoLink: "https://github.com",
     projectLink: "https://colab.research.google.com/drive/1Aj5utII1bGT8LL-3X_tsWoqHHE_qVMKC?usp=sharing",
     images: ["/projects/pothole/pipeline.webp", "/projects/pothole/strats.webp", "/projects/pothole/eval.webp", "/projects/pothole/result.webp"],
   },
   {
-    slug: "level-up",
-    title: "LEVEL UP",
-    image: "/avatar.svg",
-    tags: ["Backend Development"],
+    slug: "mbg-sentiment-analysis",
+    title: "MBG SENTIMENT ANALYSIS",
+    image: "/projects/mbg/thumbnail.webp",
+    tags: ["Machine Learning", "Natural Language Processing"],
     description: "Level Up is a SaaS platform to help MSMEs to be ",
     repoLink: "https://github.com",
     projectLink: "https://example.com",
     images: ["/avatar.svg", "/avatar.svg", "/avatar.svg", "/avatar.svg"],
   },
-  // {
-  //   slug: "project-lima",
-  //   title: "Project Lima",
-  //   image: "/avatar.svg",
-  //   tag: "Data Science",
-  //   description: LOREM_IPSUM,
-  //   repoLink: "https://github.com",
-  //   images: ["/avatar.svg", "/avatar.svg"],
-  // },
+  {
+    slug: "project-lima",
+    title: "Project Lima",
+    image: "/avatar.svg",
+    tags: ["Machine Learning", "Natural Language Processing"],
+    description: LOREM_IPSUM,
+    repoLink: "https://github.com",
+    images: ["/avatar.svg", "/avatar.svg"],
+  },
 ];

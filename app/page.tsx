@@ -150,47 +150,47 @@ export default function Home() {
             </h1>
           </div>
           
-          <div className="relative flex w-full items-center justify-between gap-4 md:gap-8">
+          <div 
+            ref={carouselRef}
+            onScroll={handleScroll}
+            className="relative flex w-full gap-4 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
+          >
+            {projects.map((project) => (
+              <div key={project.slug} className="snap-center shrink-0">
+                <WorkCard project={project} />
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden md:flex items-center justify-center gap-4 mt-2">
             <button 
               onClick={scrollPrev}
               disabled={currentPage === 0}
-              className="hidden md:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex shrink-0 items-center justify-center transition-colors hover:text-neutral-500 disabled:cursor-not-allowed disabled:opacity-30"
             >
-              <ChevronLeft size={24} className="text-black" />
+              <ChevronLeft size={28} className="text-bg-bg-light" />
             </button>
-
-            <div 
-              ref={carouselRef}
-              onScroll={handleScroll}
-              className="relative flex w-full md:max-w-[992px] gap-4 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar"
-            >
-              {projects.map((project) => (
-                <div key={project.slug} className="snap-center shrink-0">
-                  <WorkCard project={project} />
-                </div>
+            
+            <div className="flex items-center justify-center gap-2">
+              {Array.from({ length: Math.ceil(projects.length / 3) }).map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => scrollToPage(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentPage === idx ? "w-8 bg-neutral-400" : "w-2 border border-neutral-300 hover:bg-neutral-200"
+                  }`}
+                  aria-label={`Go to page ${idx + 1}`}
+                />
               ))}
             </div>
 
             <button 
               onClick={scrollNext}
               disabled={currentPage === Math.ceil(projects.length / 3) - 1}
-              className="hidden md:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex shrink-0 items-center justify-center transition-colors hover:text-neutral-500 disabled:cursor-not-allowed disabled:opacity-30"
             >
-              <ChevronRight size={24} className="text-black" />
+              <ChevronRight size={28} className="text-bg-bg-light" />
             </button>
-          </div>
-
-          <div className="hidden md:flex items-center justify-center gap-2 mt-2">
-            {Array.from({ length: Math.ceil(projects.length / 3) }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => scrollToPage(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentPage === idx ? "w-8 bg-bg-light" : "w-2 border border-bg-light hover:bg-bg-light/50"
-                }`}
-                aria-label={`Go to page ${idx + 1}`}
-              />
-            ))}
           </div>
         </div>
       </section>
