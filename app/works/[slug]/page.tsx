@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { ArrowUpRight, Github, ArrowRight } from "lucide-react";
+import ProjectCarousel from "@/components/ProjectCarousel";
 
 const headerFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -23,46 +24,12 @@ export default async function ProjectDetailPage({
   return (
     <article className="min-h-screen bg-bg-light px-4 pb-20 pt-24 sm:px-6 md:px-8">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-10 flex w-full gap-4 overflow-x-auto snap-x snap-mandatory pb-4">
-          {project.video && (
-            <div className="relative aspect-video w-full shrink-0 snap-center overflow-hidden rounded-2xl border border-black/10 bg-neutral-200">
-              <video
-                src={project.video}
-                controls
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="h-full w-full object-cover"
-              />
-            </div>
-          )}
-
-          {project.images && project.images.length > 0 ? (
-            project.images.map((img, idx) => (
-              <div
-                key={idx}
-                className="relative aspect-video w-full shrink-0 snap-center overflow-hidden rounded-2xl border border-black/10 bg-neutral-200"
-              >
-                <Image
-                  src={img}
-                  alt={`${project.title} screenshot ${idx + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))
-          ) : !project.video && (
-            <div className="relative aspect-video w-full shrink-0 snap-center overflow-hidden rounded-2xl border border-black/10 bg-neutral-200">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          )}
-        </div>
+        <ProjectCarousel 
+          video={project.video} 
+          images={project.images} 
+          fallbackImage={project.image} 
+          title={project.title} 
+        />
 
         {/* Header Proyek */}
         <header className="mb-10">
